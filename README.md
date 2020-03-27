@@ -3,6 +3,9 @@ Sorry strawpoll ;)
 
 # How to use
 
+run npm install socks-proxy-agent, npm install request-promise, npm install unirest
+
+
 IP VERIFICATION:
 <br>
 Enter socks4 proxies into proxies.txt, if you need to use socks5 edit the code and replace socks4:// with socks5://!
