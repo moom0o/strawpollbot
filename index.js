@@ -38,7 +38,7 @@ var proxy = `socks4://${proxy}`
 var agent = new SocksProxyAgent(proxy);
 
 var options = {
-    uri: 'https://www.strawpoll.me/19629149',
+    uri: 'https://www.strawpoll.me/19629149', //ignore the misspelling idk why but in an example it was spelt that way
     agent: agent,
     method: 'POST',
     headers: {
@@ -50,12 +50,12 @@ var options = {
 }
 
 try {
-    var responce = await rp(options)
+    var response = await rp(options)
 } catch(err) {
     console.log(err)
 }
 
-console.log(responce)
+console.log(response)
 }
 //=======================================
 // No verification/browser cookie verification (comment other one and uncomment this one)
