@@ -21,42 +21,42 @@
 //
 // IP VERIFICATION (need to use socks proxys.)
 //======================================
-const fs = require("fs")
-let words = fs.readFileSync(`proxies.txt`, "utf-8");
-const lines = words.split(/\r?\n/);
-lines.forEach(function(line,index,collection) {
-    setTimeout(() => {
-        main(line)
-    }, index * 100)
-})
-async function main(proxy) {
-var SocksProxyAgent = require('socks-proxy-agent');
-var rp = require('request-promise');
+// const fs = require("fs")
+// let words = fs.readFileSync(`proxies.txt`, "utf-8");
+// const lines = words.split(/\r?\n/);
+// lines.forEach(function(line,index,collection) {
+//     setTimeout(() => {
+//         main(line)
+//     }, index * 100)
+// })
+// async function main(proxy) {
+// var SocksProxyAgent = require('socks-proxy-agent');
+// var rp = require('request-promise');
 
-var proxy = `socks4://${proxy}`
+// var proxy = `socks4://${proxy}`
 
-var agent = new SocksProxyAgent(proxy);
+// var agent = new SocksProxyAgent(proxy);
 
-var options = {
-    uri: 'https://www.strawpoll.me/19629149', //ignore the misspelling idk why but in an example it was spelt that way
-    agent: agent,
-    method: 'POST',
-    headers: {
-        'User-Agent': 'ez bot fuck you strawpoll!'
-    },
-    form: {
-        "options": '148658214'
-    },
-}
+// var options = {
+//     uri: 'https://www.strawpoll.me/19629149', //ignore the misspelling idk why but in an example it was spelt that way
+//     agent: agent,
+//     method: 'POST',
+//     headers: {
+//         'User-Agent': 'ez bot fuck you strawpoll!'
+//     },
+//     form: {
+//         "options": '148658214'
+//     },
+// }
 
-try {
-    var response = await rp(options)
-} catch(err) {
-    console.log(err)
-}
+// try {
+//     var response = await rp(options)
+// } catch(err) {
+//     console.log(err)
+// }
 
-console.log(response)
-}
+// console.log(response)
+// }
 //=======================================
 // No verification/browser cookie verification (comment other one and uncomment this one)
 //====================================
@@ -88,6 +88,8 @@ console.log(response)
 
 // strawpoll.COM
 //========================================================================
+// let success = 21
+// let none_success = 283
 // const fs = require("fs")
 // let words = fs.readFileSync(`proxies.txt`, "utf-8");
 // const lines = words.split(/\r?\n/);
@@ -96,6 +98,8 @@ console.log(response)
 //         main(line)
 //     }, index * 100)
 // })
+// console.log("SUCCESSFUL: " + success)
+// console.log("NON SUCCESSFUL: " + none_success)
 // async function main(proxy) {
 // var SocksProxyAgent = require('socks-proxy-agent');
 // var rp = require('request-promise');
@@ -111,18 +115,34 @@ console.log(response)
 //     headers: {
 //         'User-Agent': 'ez bot fuck you strawpoll!'
 //     },
-//     form: {
-//         "content_id": '1zb8xda5',
-//         "checked_answers": 'shp85frh6rrg',
+//     body: {
+//         content_id: 'af5bbwkw',
+//         checked_answers: 'ryb53x3b5yxc'
 //     },
+//     json: true
 // }
 
 // try {
 //     var response = await rp(options)
 // } catch(err) {
-//     console.log(err)
+//     console.log("error")
 // }
 
 // console.log(response)
+// if(!response){
+//     return
+// }
+// if(response.success === 0){
+//     none_success = none_success + 1
+//     console.log("SUCCESSFUL: " + success)
+//     console.log("NON SUCCESSFUL: " + none_success)
+// } else {
+//     if(response.success === 1){
+//         success = success + 1
+//         console.log("SUCCESSFUL: " + success)
+//         console.log("NON SUCCESSFUL: " + none_success)
+
+//     }
+// }
 // }
 //========================================================================
