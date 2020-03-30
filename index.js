@@ -74,3 +74,55 @@ console.log(response)
 // }, 100)
 //=====================================
 //
+
+
+
+
+
+
+
+
+
+
+
+
+// strawpoll.COM
+//========================================================================
+// const fs = require("fs")
+// let words = fs.readFileSync(`proxies.txt`, "utf-8");
+// const lines = words.split(/\r?\n/);
+// lines.forEach(function(line,index,collection) {
+//     setTimeout(() => {
+//         main(line)
+//     }, index * 100)
+// })
+// async function main(proxy) {
+// var SocksProxyAgent = require('socks-proxy-agent');
+// var rp = require('request-promise');
+
+// var proxy = `socks4://${proxy}`
+
+// var agent = new SocksProxyAgent(proxy);
+
+// var options = {
+//     uri: 'https://strawpoll.com/api/poll/vote', //ignore the misspelling idk why but in an example it was spelt that way
+//     agent: agent,
+//     method: 'POST',
+//     headers: {
+//         'User-Agent': 'ez bot fuck you strawpoll!'
+//     },
+//     form: {
+//         "content_id": '1zb8xda5',
+//         "checked_answers": 'shp85frh6rrg',
+//     },
+// }
+
+// try {
+//     var response = await rp(options)
+// } catch(err) {
+//     console.log(err)
+// }
+
+// console.log(response)
+// }
+//========================================================================
